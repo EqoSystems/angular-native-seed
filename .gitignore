@@ -49,4 +49,3 @@ Thumbs.db
 
 # Secrets
 nginx/keys
-/src/app/+about/components/about/about.component.html
