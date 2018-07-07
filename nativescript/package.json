@@ -67,7 +67,7 @@
     "webpack-sources": "~1.1.0"
   },
   "scripts": {
-    "clean": "npm i -g rimraf && rimraf -- node_modules dist hooks && git clean -fx -e *.iml",
+    "clean": "npm i -g rimraf && rimraf -- node_modules dist hooks && git clean -fx -e *.iml && npm cache verify",
     "prepPhone": "gulp build.Phone",
     "prepTablet": "gulp build.Default",
     "prepCLIPhone": "gulp build.cli.Phone",
