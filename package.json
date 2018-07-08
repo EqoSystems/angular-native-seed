@@ -6,6 +6,7 @@
     "postinstall": "node symlink.js && cd nativescript && npm i",
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.conf.json",
+    "start:ci": "ng build --prod --aot && http-server dist -p 3000 -S -K nginx/keys/server.key -C nginx/keys/server.crt --cors",
     "build": "ng build",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -13,8 +14,7 @@
     "test:coverage": "jest --coverage",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build.docker": "npm run build --prod --aot && docker-compose build && docker-compose up",
-    "build.prod": "npm run build --prod --aot"
+    "build.docker": "ng build --prod --aot && docker-compose build && docker-compose up"
   },
   "private": true,
   "browserslist": [
@@ -41,6 +41,7 @@
     "@ngx-translate/core": "^10.0.2",
     "@ngx-translate/http-loader": "^3.0.1",
     "core-js": "^2.5.7",
+    "http-server": "^0.11.1",
     "normalize.css": "^8.0.0",
     "rxjs": "^6.2.0",
     "typescript": ">=2.7.0 <2.8.0",
