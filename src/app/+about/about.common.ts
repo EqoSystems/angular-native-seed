@@ -3,12 +3,12 @@ import { TranslateModule } from '@ngx-translate/core';
 // app
 import { SharedModule } from '../shared';
 import { RouterModule } from '../common';
-import { AboutRoutingModule } from './about-routing.module';
+import { AboutRoutes } from './about.routes';
 import { AboutComponent } from './components/about/about.component';
 
 export const SHARED_MODULES: any[] = [
     SharedModule,
-    AboutRoutingModule,
+    RouterModule.forChild(<any>AboutRoutes),
     TranslateModule.forChild(),
 ];
 
