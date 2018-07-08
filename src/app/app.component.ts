@@ -8,7 +8,7 @@ declare const require: any;
 
 @Component({
     moduleId: module.id,
-    selector: 'maestro-app',
+    selector: 'seed-app',
     templateUrl: './app.component.html',
 })
 export class AppComponent {
