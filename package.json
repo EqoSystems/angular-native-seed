@@ -2,11 +2,10 @@
   "name": "angular-native-seed",
   "version": "0.0.0",
   "scripts": {
-    "clean": "npm i -g rimraf && rimraf -- node_modules dist package-lock.json && npm cache verify && cd nativescript && npm run clean",
+    "clean": "npm i -g rimraf && rimraf -- node_modules dist && npm cache verify -g && cd nativescript && npm run clean",
     "postinstall": "node symlink.js && cd nativescript && npm i",
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.conf.json",
-    "prebuild": "npm run clean && npm i",
     "build": "ng build",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -14,7 +13,7 @@
     "test:coverage": "jest --coverage",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build.docker": "ng build --prod --aot && docker-compose build && docker-compose up"
+    "build.docker": "npm run build --prod --aot && docker-compose build && docker-compose up"
   },
   "private": true,
   "browserslist": [
@@ -24,30 +23,32 @@
     "not dead"
   ],
   "dependencies": {
-    "@angular/animations": "^6.0.7",
+    "@angular/animations": "6.0.7",
     "@angular/cdk": "^6.3.2",
-    "@angular/common": "^6.0.7",
-    "@angular/compiler": "^6.0.7",
-    "@angular/core": "^6.0.7",
-    "@angular/forms": "^6.0.7",
-    "@angular/http": "^6.0.7",
+    "@angular/common": "6.0.7",
+    "@angular/compiler": "6.0.7",
+    "@angular/core": "6.0.7",
+    "@angular/forms": "6.0.7",
+    "@angular/http": "6.0.7",
     "@angular/material": "^6.3.2",
-    "@angular/platform-browser": "^6.0.7",
-    "@angular/platform-browser-dynamic": "^6.0.7",
-    "@angular/platform-server": "^6.0.7",
-    "@angular/router": "^6.0.7",
+    "@angular/platform-browser": "6.0.7",
+    "@angular/platform-browser-dynamic": "6.0.7",
+    "@angular/platform-server": "6.0.7",
+    "@angular/router": "6.0.7",
     "@ngx-translate/core": "^10.0.2",
     "@ngx-translate/http-loader": "^3.0.1",
     "core-js": "^2.5.7",
+    "normalize.css": "^8.0.0",
     "rxjs": "^6.2.0",
+    "typescript": ">=2.7.0 <2.8.0",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.6.8",
+    "@angular-devkit/build-angular": "0.6.7",
     "@angular-devkit/core": "^0.6.8",
-    "@angular/cli": "^6.0.8",
-    "@angular/compiler-cli": "^6.0.7",
-    "@angular/language-service": "^6.0.7",
+    "@angular/cli": "6.0.7",
+    "@angular/compiler-cli": "6.0.7",
+    "@angular/language-service": "6.0.7",
     "@types/jest": "^23.1.4",
     "@types/node": "~8.9.4",
     "codelyzer": "^4.3.0",
@@ -56,7 +57,6 @@
     "protractor": "~5.3.2",
     "rxjs-tslint": "^0.1.5",
     "ts-node": "~6.1.0",
-    "tslint": "~5.10.0",
-    "typescript": "^2.7.2"
+    "tslint": "~5.10.0"
   }
 }
