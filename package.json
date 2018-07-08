@@ -2,7 +2,7 @@
   "name": "angular-native-seed",
   "version": "0.0.0",
   "scripts": {
-    "clean": "npm i -g rimraf && rimraf -- node_modules dist && npm cache verify -g && cd nativescript && npm run clean",
+    "clean": "npm i -g rimraf && rimraf -- node_modules dist coverage && npm cache verify -g && cd nativescript && npm run clean",
     "postinstall": "node symlink.js && cd nativescript && npm i",
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.conf.json",
