@@ -8,6 +8,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { Config } from './common/index';
 import { AppComponent } from './app.component';
 import { SHARED_MODULES } from './app.common';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 Config.PLATFORM_TARGET = Config.PLATFORMS.WEB;
 
@@ -28,7 +30,8 @@ export function HttpLoaderFactory(http: HttpClient) {
                 deps: [HttpClient]
             }
         }),
-        ...SHARED_MODULES
+        ...SHARED_MODULES,
+        ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
     ],
     providers: [],
     bootstrap: [AppComponent]
