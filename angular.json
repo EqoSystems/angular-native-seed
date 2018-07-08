@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-seed-project": {
+    "angular-native-seed": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -50,18 +50,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-seed-project:build"
+            "browserTarget": "angular-native-seed:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-seed-project:build:production"
+              "browserTarget": "angular-native-seed:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-seed-project:build"
+            "browserTarget": "angular-native-seed:build"
           }
         },
         "test": {
@@ -94,7 +94,7 @@
         }
       }
     },
-    "angular-seed-project-e2e": {
+    "angular-native-seed-e2e": {
       "root": "",
       "sourceRoot": "e2e",
       "projectType": "application",
@@ -103,7 +103,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-seed-project:serve"
+            "devServerTarget": "angular-native-seed:serve"
           }
         },
         "lint": {
@@ -118,7 +118,7 @@
       }
     }
   },
-  "defaultProject": "angular-seed-project",
+  "defaultProject": "angular-native-seed",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "seed",
